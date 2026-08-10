@@ -1,0 +1,16 @@
+set shell := ["powershell.exe", "-c"]
+# Build container
+build:
+    docker compose -f deploy/docker-compose.yaml build --no-cache
+# Start the docker containers
+start:
+    docker compose -f deploy/docker-compose.yaml up -d
+
+# Stop and remove the docker containers
+stop:
+    docker compose -f deploy/docker-compose.yaml down
+
+# Start an interactive shell in the app container
+dev:
+    docker run -it --rm -v .:/app -v /app/node_modules --workdir /app --env WATCHPACK_POLLING=true --env CHOKIDAR_USEPOLLING=true \
+        --publish 4321:4321 --entrypoint sh node:26-slim -c "npm install && echo 'Start Dev Server: npm run dev' && sh"
