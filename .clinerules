@@ -1,0 +1,22 @@
+# Development Environment
+- This project runs on Windows
+- Use Windows-compatible commands (avoid && chaining, use proper Windows paths)
+- Use PowerShell syntax by default, do not assume linux commands will work
+- Use `Select-String` instead of `grep`
+- Each project under `projects/` has an AGENTS.md file with relevant details for that project that you should read before action for full context
+- When navigating folder structure, avoid temporary files that are specified in `.gitignore`. When listing directories and files exclude these entries unless directly relevant to current task, this is to save on token costs and is not a hard rule.
+
+- Always exclude `node_modules`, `.vercel`, `dist`, and `.astro` directories from recursive scans, searches, or content inspections.
+- When searching for secrets, credentials, or configuration, prioritize checking common configuration files (e.g., `package.json`, `*.config.*`, `.env`) before performing a full recursive scan.
+- Use file extension filters when using `Select-String` to minimize token usage and improve search precision.
+
+## Tool Usage Protocol (Strict)
+
+### File Editing Requirements:
+1. **Read-Before-Write**: You MUST never attempt to edit a file without first reading its current content using `read_files`. Use the exact output from `read_files` as the source for your `old_text`.
+2. **Existing Files**: When modifying an existing file, you MUST provide the exact `old_text` or use `insert_line`. Never omit `old_text` for an existing file.
+3. **Atomic Edits**: For large files or complex changes, break edits into the smallest possible chunks. Instead of replacing a whole function, replace only the specific lines that changed.
+4. **Insert vs. Replace**: 
+    - Use `insert_line` for adding new content at the end of a file or at a specific position.
+    - Use `old_text` / `new_text` only for precise replacements of existing content.
+5. **Validation**: After every edit, verify the change by reading the file again to ensure the output matches the intended result.

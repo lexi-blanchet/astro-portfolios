@@ -1,0 +1,14 @@
+{
+    "yaml.disableSchemaDetection": [],
+    "yaml.schemas": {
+        "https://www.schemastore.org/helmfile.json": "file:///c%3A/Users/MBer1/Documents/Git/k3s-lab-apps/bootstrap/templates/applications.yaml",
+        "file:///c%3A/Users/MBer1/.vscode/extensions/continue.continue-1.2.22-win32-x64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
+        ],
+        "https://raw.githubusercontent.com/mostlygeek/llama-swap/refs/heads/main/config-schema.json": "file:///c%3A/Users/MBer1/Documents/Git/ollama-open-webui/config/llama-swap-config.yaml",
+        "file:///c%3A/Users/MBer1/.vscode/extensions/continue.continue-2.0.0-win32-x64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
+        ],
+        "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json": "file:///c%3A/Users/MBer1/Documents/Git/gh-public/astro-portfolios/.clinerules"
+    }
+}
