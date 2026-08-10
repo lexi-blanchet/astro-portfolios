@@ -6,9 +6,9 @@ import node from '@astrojs/node';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://lexi-blanchet.github.io',
-  base: '/astro-portfolios',
-  server: {host: true},
-  adapter: node({
-    mode: 'standalone'
-  })
+  base: '/astro-portfolios'
+  //server: {host: true},
+  //adapter: node({
+  //  mode: 'standalone'
+  //})
 });
