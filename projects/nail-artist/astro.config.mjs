@@ -23,6 +23,8 @@ export default defineConfig({
   },
   output: "server",
 
+  site: 'https://lexi-blanchet.github.io',
+  base: '/astro-portfolios',
   // Github actions require a specific setup so we exclude our docker config
   server: isLocal ? { host: true } : undefined,
   adapter: isLocal ? node({ mode: 'standalone' }) : undefined,

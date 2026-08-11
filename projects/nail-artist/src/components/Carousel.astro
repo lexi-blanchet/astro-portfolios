@@ -20,7 +20,7 @@ const getPrevId = (index: number) =>
 const getNextId = (index: number) => slideIds[(index + 1) % slideIds.length];
 ---
 
-<div class="w-full max-w-5xl mx-auto">
+<div class="w-full max-w-5xl mx-auto mb-4">
   <div class="carousel w-full">
     {
       slides.map((slide, index) => (
