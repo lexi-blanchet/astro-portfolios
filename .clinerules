@@ -8,6 +8,7 @@
 - Always exclude `node_modules`, `.vercel`, `dist`, and `.astro` directories from recursive scans, searches, or content inspections.
 - When searching for secrets, credentials, or configuration, prioritize checking common configuration files (e.g., `package.json`, `*.config.*`, `.env`) before performing a full recursive scan.
 - Use file extension filters when using `Select-String` to minimize token usage and improve search precision.
+- You must use `test-path` to test for the existence of files
 
 ## Tool Usage Protocol (Strict)
 

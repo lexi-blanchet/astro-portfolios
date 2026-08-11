@@ -1,0 +1,9 @@
+slides:
+  - alt: "Nail Art 1"
+    image: '@assets/carousel/nails1.jpg'
+  - alt: "Nail Art 2"
+    image: '@assets/carousel/nails2.jpg'
+  - alt: "Nail Art 3"
+    image: '@assets/carousel/nails3.jpg'
+  - alt: "Nail Art 4"
+    image: '@assets/carousel/nails4.jpg'

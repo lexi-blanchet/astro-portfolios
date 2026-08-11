@@ -6,6 +6,7 @@ import Timeline from "../components/Timeline.astro";
 import Projects from "../components/Projects.astro";
 //import Blog from "../components/Blog.astro"; // Might need this later
 import Contact from "../components/Contact.astro";
+import Carousel from "../components/Carousel.astro";
 import { GraduationCap } from "@lucide/astro";
 import { getEntry, render } from "astro:content";
 
@@ -19,6 +20,9 @@ const { Content: AboutContent } = await render(aboutEntry);
 // Load General singleton
 const generalEntry = await getEntry("general", "index");
 const general = generalEntry.data;
+
+// Load Carousel singleton
+const carouselEntry = await getEntry("carousel", "index");
 ---
 
 <Layout
@@ -43,6 +47,10 @@ const general = generalEntry.data;
           />
         )
       }
+
+      <!-- Carousel Section -->
+      <Carousel slides={carouselEntry.data.slides} />
+      <div />
 
       <!-- Projects Section -->
       <!-- {general.showProjectsSection && <Projects />} -->

@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Slide {
+  alt: string;
+  image: ImageMetadata | string;
+}
+
+interface Props {
+  slides: Slide[];
+}
+
+const { slides } = Astro.props;
+
+const slideIds = slides.map((_, i) => `slide${i + 1}`);
+
+const getPrevId = (index: number) =>
+  slideIds[(index - 1 + slideIds.length) % slideIds.length];
+const getNextId = (index: number) => slideIds[(index + 1) % slideIds.length];
+---
+
+<div class="w-full max-w-5xl mx-auto">
+  <div class="carousel w-full">
+    {
+      slides.map((slide, index) => (
+        <div
+          id={slideIds[index]}
+          class="carousel-item relative w-full h-[250px] sm:h-[350px] lg:h-[450px] overflow-hidden bg-base-200 rounded-2xl"
+        >
+          {typeof slide.image === "string" ? (
+            <img
+              src={slide.image}
+              alt={slide.alt}
+              class="w-full h-full object-contain"
+            />
+          ) : (
+            <Image
+              src={slide.image}
+              alt={slide.alt}
+              class="w-full h-full object-contain"
+            />
+          )}
+          <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href={`#${getPrevId(index)}`} class="btn btn-circle">
+              ❮
+            </a>
+            <a href={`#${getNextId(index)}`} class="btn btn-circle">
+              ❯
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

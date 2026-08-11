@@ -197,6 +197,19 @@ const contact = defineCollection({
   }),
 });
 
+// Carousel singleton
+const carousel = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdoc,yaml}", base: "./src/content/carousel" }),
+  schema: ({ image }) => z.object({
+    slides: z.array(
+      z.object({
+        alt: z.string(),
+        image: image(),
+      })
+    ),
+  }),
+});
+
 export const collections = {
   hero,
   work,
@@ -208,4 +221,6 @@ export const collections = {
   about,
   general,
   contact,
+  carousel,
 };
+
