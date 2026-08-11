@@ -1,7 +1,0 @@
-services:
-  basic-template:
-    build:
-      context: ../../
-      dockerfile: deploy/basic-template/Dockerfile
-    ports:
-      - "4321:4321"

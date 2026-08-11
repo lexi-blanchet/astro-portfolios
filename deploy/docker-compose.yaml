@@ -1,0 +1,9 @@
+services:
+  nail-artist:
+    build:
+      context: ../
+      dockerfile: deploy/Dockerfile
+      args:
+        ASTRO_PROJECT: ${ASTRO_PROJECT} # Pass the build target via environment variable
+    ports:
+      - "4321:4321"

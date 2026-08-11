@@ -1,7 +1,0 @@
-services:
-  nail-artist:
-    build:
-      context: ../../
-      dockerfile: deploy/nail-artist/Dockerfile
-    ports:
-      - "4321:4321"
