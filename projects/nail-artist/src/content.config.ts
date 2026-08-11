@@ -32,22 +32,6 @@ const hero = defineCollection({
     }),
 });
 
-// Work experience collection
-const work = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdoc,yaml}", base: "./src/content/work" }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      subtitle: z.string(),
-      location: z.string().optional(),
-      startDate: z.coerce.date(),
-      endDate: z.coerce.date().optional(),
-      logo: image().optional(),
-      link: z.string().url().optional(),
-      skills: z.array(z.string()).optional(),
-    }),
-});
-
 // Education collection
 const education = defineCollection({
   loader: glob({
@@ -62,73 +46,6 @@ const education = defineCollection({
       endDate: z.coerce.date().optional(),
       logo: image().optional(),
       link: z.string().url().optional(),
-    }),
-});
-
-// Project Categories collection
-const projectCategories = defineCollection({
-  loader: glob({
-    pattern: "**/*.{md,mdoc,yaml}",
-    base: "./src/content/projectCategories",
-  }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    icon: z.string().optional(),
-    sortOrder: z.number().optional().default(0),
-  }),
-});
-
-// Projects collection
-const projects = defineCollection({
-  loader: glob({
-    pattern: "**/*.{md,mdoc,yaml}",
-    base: "./src/content/projects",
-  }),
-  schema: ({ image }) =>
-    z.object({
-      featured: z.boolean().optional().default(false),
-      category: z.string().optional(),
-      title: z.string(),
-      description: z.string(),
-      image: image(),
-      startDate: z.coerce.date(),
-      endDate: z.coerce.date().optional(),
-      skills: z.array(z.string()),
-      demoLink: z.string().url().optional(),
-      sourceLink: z.string().url().optional(),
-    }),
-});
-
-// Hackathons collection
-const hackathons = defineCollection({
-  loader: glob({
-    pattern: "**/*.{md,mdoc,yaml}",
-    base: "./src/content/hackathons",
-  }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      location: z.string(),
-      description: z.string(),
-      startDate: z.coerce.date(),
-      endDate: z.coerce.date().optional(),
-      logo: image().optional(),
-      sourceLink: z.string().url().optional(),
-    }),
-});
-
-// Blog collection
-const blog = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdoc,yaml}", base: "./src/content/blog" }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      description: z.string(),
-      image: image(),
-      publishDate: z.coerce.date(),
-      updatedDate: z.coerce.date().optional(),
-      tags: z.array(z.string()).optional(),
     }),
 });
 
@@ -212,12 +129,7 @@ const carousel = defineCollection({
 
 export const collections = {
   hero,
-  work,
   education,
-  projectCategories,
-  projects,
-  hackathons,
-  blog,
   about,
   general,
   contact,
