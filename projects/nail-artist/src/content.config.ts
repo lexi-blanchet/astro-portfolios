@@ -10,6 +10,7 @@ const hero = defineCollection({
       name: z.string(),
       title: z.string(),
       description: z.string(),
+      image: image().optional(),
       avatar: image(),
       location: z.string().optional(),
       socialLinks: z.array(
@@ -137,6 +138,7 @@ const about = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
+      subheader: z.string().optional(),
       photo: image().optional(),
       link: z.string().url().optional(),
     }),
@@ -185,7 +187,7 @@ const general = defineCollection({
 const contact = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdoc,yaml}", base: "./src/content/contact" }),
   schema: z.object({
-    icon: z.enum(["MessageCircleCode", "Mail", "Phone"]),
+    icon: z.enum(["MessageCircleCode", "Mail", "Phone", "Instagram"]),
     linkUrl: z.string().url(),
     linkText: z.string(),
     footerIcon: z.enum(["Pickaxe", "Hammer", "Heart"]),

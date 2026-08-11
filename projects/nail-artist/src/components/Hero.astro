@@ -8,6 +8,7 @@ interface Props {
   hero: {
     name: string;
     title: string;
+    image?: ImageMetadata | string;
     description: string;
     avatar: ImageMetadata | string;
     location?: string;
@@ -20,13 +21,21 @@ interface Props {
 }
 
 const { hero } = Astro.props;
+
+// Determine the background image URL
+const defaultImage = "https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp";
+const backgroundImage = hero.image 
+  ? (typeof hero.image === 'string' ? hero.image : (hero.image as any).src) 
+  : defaultImage;
 ---
 
-<section class="hero min-h-screen">
-  <div class="hero-content flex-col lg:flex-row-reverse max-w-7xl">
-    <div class="hover-3d">
-      <!-- content -->
-      <figure class="max-w-100 w-48 lg:w-64 mask mask-squircle">
+<div
+  class="hero min-h-screen relative z-[100]"
+  style={`background-image: url(${backgroundImage});`}
+>
+  <div class="hero-content relative z-[9999] text-gray-900 text-center">
+    <div class="max-w-md bg-white/30 backdrop-blur-md rounded-[3rem] p-10">
+      <figure class="max-w-100 w-48 lg:w-64 mask mask-squircle mb-5">
         {
           typeof hero.avatar === "string" ? (
             <img src={hero.avatar} alt={hero.name} />
@@ -35,29 +44,15 @@ const { hero } = Astro.props;
           )
         }
       </figure>
-      <!-- 8 empty divs needed for the 3D effect -->
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div class="max-w-2xl text-center lg:text-left">
-      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
-        Hi, I'm {hero.name}
+      <h1 class="mb-5 text-5xl font-bold relative z-[10000]">
+        {hero.name}
       </h1>
-      <p class="skeleton skeleton-text text-xl text-base-content/80 mb-2" set:html={parseInlineLinks(hero.title)} />
-      {
-        hero.location && (
-          <p class="text-base-content/60 mb-4">{hero.location}</p>
-        )
-      }
-      <p class="text-lg leading-relaxed mb-6" set:html={parseInlineLinks(hero.description)} />
+      <p
+        class="mb-5 relative z-[10000]"
+        set:html={parseInlineLinks(hero.description)}
+      />
       <div
-        class="grid grid-cols-4 gap-2 justify-items-center lg:flex lg:gap-4 lg:justify-start"
+        class="grid grid-cols-4 gap-2 justify-items-center lg:flex lg:gap-4 lg:justify-center"
       >
         {
           hero.socialLinks.map((link) => {
@@ -71,7 +66,7 @@ const { hero } = Astro.props;
                   class="btn btn-circle btn-primary lg:btn-ghost"
                   aria-label={link.label}
                 >
-                  <IconComponent class="size-6" />
+                  <IconComponent class="size-10" />
                 </a>
               </div>
             );
@@ -80,4 +75,4 @@ const { hero } = Astro.props;
       </div>
     </div>
   </div>
-</section>
+</div>

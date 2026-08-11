@@ -1,10 +1,10 @@
 ---
-icon: MessageCircleCode
-linkUrl: https://x.com/leowg
-linkText: with a direct question on X (twitter)
+icon: Instagram
+linkUrl: https://ig.me/m/wauw_claws/
+linkText: Message wauw_claws on Instagram
 footerIcon: Pickaxe
-footerText: Crafted by an Artisan
+footerText: Bloomfolio Template By
 footerLinkText: Lauro Guedes
 footerLinkUrl: https://lauroguedes.dev
 ---
-Want to chat? shoot me a dm
+Ready for your nails to make a statement?

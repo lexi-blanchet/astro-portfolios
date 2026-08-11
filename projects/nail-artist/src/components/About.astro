@@ -5,24 +5,29 @@ import type { ImageMetadata } from "astro";
 
 interface Props {
   title: string;
+  subheader: string;
   photo?: ImageMetadata | string;
   Content: any;
   link?: string;
 }
 
-const { title, photo, Content, link } = Astro.props;
+const { title, subheader, photo, Content, link } = Astro.props;
 ---
 
 <section id="about" class="py-20 px-4">
   <div class="max-w-4xl mx-auto">
-    <div class="card card-side bg-base-200 shadow-sm">
+    <div class="card card-side bg-base-200 shadow-sm items-center rounded-3xl">
       {
         photo && (
-          <figure class="shrink-0 w-48">
+          <figure class="shrink-0 w-48 h-48 overflow-hidden">
             {typeof photo === "string" ? (
-              <img src={photo} alt={title} />
+              <img src={photo} alt={title} class="rounded-full object-cover" />
             ) : (
-              <Image src={photo} alt={title} />
+              <Image
+                src={photo}
+                alt={title}
+                class="rounded-full object-cover"
+              />
             )}
           </figure>
         )
@@ -37,9 +42,9 @@ const { title, photo, Content, link } = Astro.props;
         {
           link && (
             <div class="card-actions justify-end">
-              <div class="tooltip" data-tip="More about me">
-                <a href={link} target="_blank" class="btn btn-primary">
-                  <Plus class="size-5" />
+              <div class="tooltip" data-tip="All My Work">
+                <a href={link} target="_blank" class="btn btn-soft btn-primary">
+                  Follow me on Instagram
                 </a>
               </div>
             </div>

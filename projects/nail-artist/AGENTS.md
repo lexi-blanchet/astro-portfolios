@@ -7,6 +7,7 @@ This project is an Astro-based portfolio site. It leverages Keystatic for conten
 
 ## Tech Stack
 - **Framework**: Astro
+- **Tailwind CSS Plugin**: DaisyUI
 - **Frontend**: React
 - **Styling**: TailwindCSS (v4)
 - **Content Management**: Keystatic

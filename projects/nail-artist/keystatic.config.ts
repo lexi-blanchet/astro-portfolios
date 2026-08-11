@@ -27,6 +27,12 @@ export default config({
           label: "Title",
           description: "Main headline/tagline",
         }),
+        photo: fields.image({
+          label: "Photo",
+          directory: "src/assets/hero",
+          publicPath: "@assets/hero/",
+          description: "Your photo for the hero section background",
+        }),
         description: fields.text({
           label: "Description",
           multiline: true,

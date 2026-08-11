@@ -1,35 +1,17 @@
-name: 🌻 Bloomfolio
-title: >-
-  Astro Portfolio Template built with [link:https://daisyui.com]🌼
-  DaisyUI[/link]
+name: wauw_claws
+title: test
+image: '@assets/hero/backgroundcreek.jpg'
 description: >-
-  A modern, responsive, and customizable portfolio templatebuilt with
-  [link:https://astro.build/]Astro[/link]  and DaisyUI. Perfect for developers,
-  designers, and creatives to showcase their work and skills.
-avatar: '@assets/hero/avatar.png'
-location: 🇧🇷 Brazil
+  ✨ Turning your nail goals into reality.
+  💅 Specialist in [e.g., Gel-X / Acrylics / Hand-painted Art] 
+  💌 DM or Email the link to book your transformation!
+
+avatar: '@assets/hero/hero.png'
+location: 📍 🇺🇸 Denver, Colorado
 socialLinks:
+  - url: https://www.instagram.com/wauw_claws/
+    icon: Instagram
+    label: Instagram
   - url: mailto:hello@example.com
     icon: Email
     label: Email
-  - url: https://github.com/lauroguedes
-    icon: GitHub
-    label: GitHub
-  - url: https://linkedin.com/in/lauroguedes
-    icon: LinkedIn
-    label: LinkedIn
-  - url: https://twitter.com/leowg
-    icon: Twitter
-    label: X (Twitter)
-  - url: https://bsky.app/profile/lauroguedes.bsky.social
-    icon: Bluesky
-    label: Bluesky
-  - url: https://instagram.com/lauroguedes.dev
-    icon: Instagram
-    label: Instagram
-  - url: https://youtube.com/leowgweb
-    icon: YouTube
-    label: YouTube
-  - url: https://codetips.cloud/u/lauroguedes
-    icon: FolderCode
-    label: CodeTips

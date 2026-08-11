@@ -1,11 +1,10 @@
-# Development Environment
+# Development Environment Protocol (Strict)
 - This project runs on Windows
 - Use Windows-compatible commands (avoid && chaining, use proper Windows paths)
 - Use PowerShell syntax by default, do not assume linux commands will work
 - Use `Select-String` instead of `grep`
-- Each project under `projects/` has an AGENTS.md file with relevant details for that project that you should read before action for full context
+- Each project under `projects/` has an AGENTS.md file you MUST read before performing any actions
 - When navigating folder structure, avoid temporary files that are specified in `.gitignore`. When listing directories and files exclude these entries unless directly relevant to current task, this is to save on token costs and is not a hard rule.
-
 - Always exclude `node_modules`, `.vercel`, `dist`, and `.astro` directories from recursive scans, searches, or content inspections.
 - When searching for secrets, credentials, or configuration, prioritize checking common configuration files (e.g., `package.json`, `*.config.*`, `.env`) before performing a full recursive scan.
 - Use file extension filters when using `Select-String` to minimize token usage and improve search precision.

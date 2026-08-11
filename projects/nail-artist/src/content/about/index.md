@@ -1,8 +1,10 @@
 ---
-title: About Me
-photo: '@assets/about/photo.png'
-link: https://linkedin.com/in/lauroguedes
+title: Tiffany Blanchet
+subheader: Nail Artist
+photo: '@assets/about/aboutme.png'
+link: https://www.instagram.com/wauw_claws/
 ---
-My toolkit revolves around the **Laravel and Vue JS** ecosystem. I enjoy crafting everything from robust APIs and full-stack applications to open-source tools like the [Mary UI Laravel Starter Kit](https://github.com/lauroguedes/mary-ui-starter-kit) and [Bloomfolio](https://github.com/lauroguedes/bloomfolio), an Astro portfolio template that's been forked dozens of times.
+✨ Your nails are your best accessory so let’s make them pop! ✨
 
-When I'm not coding, I'm probably exploring AI art, traveling, or listening to 🎸 heavy music way too loud.
+I’m Tiffany Blanchet, a nail artist and former computational linguist ready to help you make a statement. Whether you want quality manicures, perfectly blended French tips, or a custom set that turns heads, I’m here to bring your wildest nail inspo to life. Let’s create something unforgettable.
+
